@@ -1,0 +1,36 @@
+SELECT 
+Transaction_ID,
+CASE 
+	WHEN Item IS NULL THEN 'a/n'
+	ELSE UPPER(LEFT(Item,1)) + LOWER(SUBSTRING(Item,2, LEN(Item)))
+END AS Item,
+CASE WHEN 
+	Quantity IS NULL OR Quantity <= 0 
+	THEN Total_Spent / NULLIF(Price_Per_Unit,0) 
+	ELSE Quantity
+END AS Quantity,
+CASE WHEN
+	Price_Per_Unit IS NULL OR Price_Per_Unit <= 0 
+	THEN Total_Spent / NULLIF(Quantity,0)
+	ELSE Price_Per_Unit
+END AS Price_Per_Unit,
+CASE WHEN 
+	Total_Spent IS NULL OR Total_Spent <= 0 OR Total_Spent != Quantity * ABS(Price_Per_Unit) 
+	THEN Quantity * ABS(Price_Per_Unit)
+    ELSE Total_Spent
+END AS Total_Spent,
+CASE 
+	WHEN Payment_Method IS NULL THEN 'a/n'
+	ELSE UPPER(LEFT(Payment_Method,1)) + LOWER(SUBSTRING(Payment_Method,2, LEN(Payment_Method)))
+END AS Payment_Method,
+CASE
+	WHEN Location is NULL THEN 'a/n'
+	ELSE UPPER(LEFT(Location, 1)) + LOWER(SUBSTRING(Location, 2, LEN(Location)))
+END AS Location,
+LEAD (Transaction_Date) OVER (ORDER BY Transaction_Date) AS Transaction_Date
+FROM (
+SELECT *,
+ROW_NUMBER () OVER (PARTITION BY Transaction_ID, Item, Quantity, Price_Per_Unit, Total_Spent, Payment_Method, Location ORDER BY Transaction_Date) AS Flag_last
+FROM dirty_cafe_sales 
+WHERE Transaction_ID IS NOT NULL
+
