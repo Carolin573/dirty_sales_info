@@ -13,7 +13,6 @@ SELECT DISTINCT Item FROM dirty_cafe_sales_info
 -- Explore all Location the customer buy the product
 SELECT DISTINCT Location FROM dirty_cafe_sales_info
 
---  Date Exploration ( Identify the earliest and latest dates (boundaries))
 -- Understand the scope of data and the timespan
 SELECT
 MAX(Transaction_Date) AS last_order_date,
@@ -37,13 +36,13 @@ SELECT AVG(Total_Spent) AS Average_Sales_Price FROM dirty_cafe_sales_info
 -- find the total number of orders
 SELECT SUM(Quantity) AS Total_Quantity FROM dirty_cafe_sales_info
 
--- find the Total number of products
+-- find the total number of products
 SELECT COUNT(Item) AS Number_of_product FROM dirty_cafe_sales_info
 
 SELECT DISTINCT Item, COUNT(*) AS Total_Product FROM dirty_cafe_sales_info
 GROUP BY Item;
 
--- find the Total number of customers
+-- find the total number of customers
 SELECT COUNT(Transaction_ID) AS Total_customer FROM dirty_cafe_sales_info
 
 -- find the total number of customers that has placed an order
@@ -66,11 +65,8 @@ SELECT 'Total_customer', COUNT(Transaction_ID) FROM dirty_cafe_sales_info
 UNION ALL
 SELECT 'Total_Nr_Customer', COUNT(DISTINCT Transaction_ID) FROM dirty_cafe_sales_info
 
--- Exploratory Data Analysis Magnitude Analysis
--- Magnitude : Compare the measure values by categories. help to categorize the important of different categories.
 
--- Find total customers by countries
--- (our case: Find total customers by Location)
+-- Find total customers by location
 SELECT
 Location,
 COUNT(Transaction_ID) AS Total_Customer_Loc
@@ -78,8 +74,7 @@ FROM dirty_cafe_sales_info
 GROUP BY Location
 ORDER BY Total_Customer_Loc DESC;
 
--- Find total customers by gender
--- (our case: Find total customers by Item)
+-- Find total customers by Item
 SELECT
 Item,
 COUNT(Transaction_ID) AS Total_customer_item
@@ -87,8 +82,7 @@ FROM dirty_cafe_sales_info
 GROUP BY Item
 ORDER BY Total_customer_item DESC;
 
--- Find total products by category
--- (our case: Find total product by Quantity)
+-- Find total product by Quantity
 SELECT
 Item,
 SUM(Quantity) AS Total_Product_Quantity
@@ -96,8 +90,7 @@ FROM dirty_cafe_sales_info
 GROUP BY Item
 ORDER BY Total_Product_Quantity DESC
 
--- What is the average costs in each category
--- (our case: Find average cost by Price_Per_Unit)
+-- Find average cost by Price_Per_Unit
 SELECT
 Item,
 AVG(Price_Per_Unit) AS Avg_Price_Per_Unit
@@ -120,14 +113,13 @@ FROM dirty_cafe_sales_info
 GROUP BY Transaction_ID
 ORDER BY Total_Revenue_Each_Customer desc
 
--- our case:  the distribution of sold items across Location
+-- the distribution of sold items across Location
 SELECT Location,
 COUNT(Quantity) AS total_sold_items
 FROM dirty_cafe_sales_info
 GROUP BY Location
 ORDER BY total_sold_items DESC
 
--- EDA Ranking Analysis ( order the values of dimensions by measure in order to identfy the Top Performers and Bottom N Performers)
 -- Which 3 Products generate the highest revenue
 SELECT TOP 3
 Item,
