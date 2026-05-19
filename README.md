@@ -75,7 +75,12 @@ Insight :
 1. The price group set applied at store mostly below 10.
 2. The least price group set is above 25.
 
-
+# Recommendation
+1. The store could be set the next target sales next year then arrange exciting marketing campaign. 
+2. Plan to make more variance for salad, such as various dressing and add up new component either plant or meat. Consider to add new menus like free gluten based.
+3. Since the most preffered location is takeaway, consider selling foods/drinks on special occasion/event in town. 
+4. Leverage high June sales to promote other items by grouping high sales with least sales items then put discount set.
+5. Manage products on cost range below 10. 
 
 
 
