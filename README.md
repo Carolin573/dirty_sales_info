@@ -62,7 +62,7 @@ This question helps to understand whether the business is growing or declining.
 
 
 Insight :
-1. The total sales tend to be fluctuative at the same range value.
+1. The total sales tend to be fluctuative at the same range value each month.
 2. June generated the highest total sales with $ 7,334
 
 | _Q.5 Segment product into cost ranges and count how many products fall into each segment._
@@ -72,7 +72,8 @@ This question aim to determine the cost range at store.
 <img width="218" height="121" alt="image" src="https://github.com/user-attachments/assets/46b11c32-a29d-484b-8bee-f41db4a9fcd0" />
 
 Insight :
-1. 
+1. The price group set applied at store mostly below 10.
+2. The least price group set is above 25.
 
 
 
