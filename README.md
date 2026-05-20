@@ -11,11 +11,13 @@ There's several business question need to identify based on dataset, as follows 
 # 📢 Data Sources
 This dataset taken from Kaggle, specifically the "dirty_cafe_sales". It provides information as needed to answer the business metrix. 
 # 🧹 Data Cleaning
-Dataset need to execute by inspecting duplicate, consistency also standardize and normalize the data then handling missing data so could be get better dataset ready for the better insigh. 
-Here's few things applied to clean the dataset : 
+Dataset need to execute by inspecting duplicate, consistency of column name then standardize and normalize the data. Afterwards handling missing data so the dataset dataset ready for the better insigh. 
+Here's few things that applied to clean the dataset : 
 1. Remove duplicate if exist. Using Row_number() to remove the duplicate.
 2. Data standardization and normalization. Applying Upper just in case mixed-case values appear later in column. Then applying Trim just in case spaces appear later in coloumn.
-3. Handling missing data. Filling the blanks by adding a default value. 
+3. Handling missing data. Filling the blanks by adding a default value.
+
+   
 # 🔭 Data Exploration
 
 
@@ -29,7 +31,6 @@ This question able to give the highlight of store's performance. In this context
 Insight :
 
 1. Within one year, the store able to generate sales about $ 88,952.
-
 
 
 | _Q.2 What is the total revenue generated for each items._
@@ -62,7 +63,7 @@ This question helps to understand whether the business is growing or declining.
 
 
 Insight :
-1. The total sales tend to be fluctuative at the same range value each month.
+1. The total sales tend to be at the same price group range each month.
 2. June generated the highest total sales with $ 7,334
 
 | _Q.5 Segment product into cost ranges and count how many products fall into each segment._
@@ -78,9 +79,9 @@ Insight :
 # Recommendation
 1. The store could be set the next target sales next year then arrange exciting marketing campaign. 
 2. Plan to make more variance for salad, such as various dressing and add up new component either plant or meat. Consider to add new menus like free gluten based.
-3. Since the most preffered location is takeaway, consider selling foods/drinks on special occasion/event in town. 
+3. Since the most preffered location is takeaway, consider selling foods/drinks on special occasion/event in town nor delivery service. 
 4. Leverage high June sales to promote other items by grouping high sales with least sales items then put discount set.
-5. Manage products on cost range below 10. 
+5. Manage products on cost range below 10.
 
 
 
