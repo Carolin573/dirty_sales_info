@@ -81,7 +81,7 @@ Insight :
 2. Plan to make more variance for salad, such as various dressing and add up new component either plant or meat. Consider to add new menus like free gluten based.
 3. Since the most preffered location is takeaway, consider selling foods/drinks on special occasion/event in town nor delivery service. 
 4. Leverage high June sales to promote other items by grouping high sales with least sales items then put discount set.
-5. Manage products on cost range below 10.
+5. Manage products at cost range below 10.
 
 
 
